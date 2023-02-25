@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Engineering PhD Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div id="background"></div> -->
+
+	<header>
+		<div class="container">
+
+			<h1>John Doe</h1>
+			<nav>
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#education">Education</a></li>
+					<li><a href="#research">Research</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
+	<main>
+		<section id="about">
+            <div class="container">
+              <div class="about-content">
+                <div class="about-text">
+                  <h2>About Me</h2>
+                  <p>I am a PhD student in engineering at XYZ University. My research focuses on...</p>
+                </div>
+                <div class="about-photo">
+                  <img src="about-pic.jpg" alt="Your Name">
+                </div>
+              </div>
+            </div>
+          </section>
+		
+		<section id="education">
+			<div class="container">
+				<h2>Education</h2>
+				<ul>
+					<li>PhD in Engineering, XYZ University (2023 - Present)</li>
+					<li>MS in Materials Science, ABC University (2021 - 2023)</li>
+					<li>BS in Chemical Engineering, DEF University (2017 - 2021)</li>
+				</ul>
+			</div>
+		</section>
+		
+		<section id="research">
+			<div class="container">
+				<h2>Research</h2>
+				<h3>Publications</h3>
+				<ul>
+					<li>Doe, J., et al. "New materials for flexible electronics." Nature Materials, vol. 12, no. 3, 2019, pp. 196-200.</li>
+					<li>Doe, J., et al. "Nanomaterials for drug delivery." Journal of Controlled Release, vol. 321, 2020, pp. 123-134.</li>
+				</ul>
+				<h3>Presentations</h3>
+				<ul>
+					<li>"New materials for energy storage." Presentation at the Materials Science Conference, San Francisco, CA, 2022.</li>
+					<li>"Nanomaterials for medical applications." Poster presentation at the Nanotechnology Conference, Washington D.C., 2021.</li>
+				</ul>
+			</div>
+		</section>
+		
+		<section id="projects">
+			<div class="container">
+				<h2>Projects</h2>
+				<h3>Development of flexible electronics</h3>
+				<p>As part of my PhD research, I am working on developing new materials for use in flexible electronics. This project involves synthesizing and characterizing new materials, as well as testing their properties for use in flexible electronic devices.</p>
+				<h3>Development of nanomaterials for drug delivery</h3>
+				<p>During my MS program, I worked on developing new nan
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+                    <script id="vertexShader" type="x-shader/x-vertex">
+                        void main() {
+                            gl_Position = vec4(position, 1.0);
+                          }
+                    </script>
+
+                    <script id="fragmentShader" type="x-shader/x-fragment">
+                        uniform vec3 u_color1;
+                        uniform vec3 u_color2;
+                        uniform float u_time;
+                        
+                        void main() {
+                          gl_FragColor = vec4(mix(u_color1, u_color2, abs(sin(u_time))), 1.0);
+                        }
+                    </script>
+
+                    <script src="gradient-background.js"></script>
+                    
+                </body>
+                </html>
