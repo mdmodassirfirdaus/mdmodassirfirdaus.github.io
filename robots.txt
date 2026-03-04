@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://firdausacademic.github.io/Firdaus_portfolio/sitemap.xml
