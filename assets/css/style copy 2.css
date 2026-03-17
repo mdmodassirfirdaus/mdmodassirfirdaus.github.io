@@ -1011,12 +1011,43 @@ section {
   height: 500px;
 }
 
+/* Force vertical manual navigation (top/bottom) for publication and patent sliders */
+.portfolio-swiper-vertical .swiper-button-next,
+.portfolio-swiper-vertical .swiper-button-prev {
+  left: 50%;
+  right: auto;
+  width: 34px;
+  height: 34px;
+  margin-top: 0;
+  transform: translateX(-50%);
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+}
+
+.portfolio-swiper-vertical .swiper-button-next {
+  top: 6px;
+  bottom: auto;
+}
+
+.portfolio-swiper-vertical .swiper-button-prev {
+  top: auto;
+  bottom: 6px;
+}
+
+.portfolio-swiper-vertical .swiper-button-next:after,
+.portfolio-swiper-vertical .swiper-button-prev:after {
+  font-size: 16px;
+  transform: rotate(-90deg);
+}
+
 .portfolio-swiper-vertical .swiper-slide {
   display: flex !important;
   justify-content: center;
   align-items: stretch;
   opacity: 0.4;
   transform: scale(0.60);
+  transform-origin: center center;
   transition: all 0.5s ease;
   border-radius: 8px;
   height: 100%;
@@ -1026,9 +1057,16 @@ section {
 
 .portfolio-swiper-vertical .swiper-slide-active {
   opacity: 1;
-  transform: scale(1.3) translateY(-10px);
+  transform: scale(1.08) translateY(-4px);
   z-index: 2;
   box-shadow: 0 10px 100px red;
+}
+
+.portfolio-swiper-vertical .swiper-slide-active .portfolio-item {
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 .portfolio-swiper-vertical .portfolio-item {
@@ -1091,16 +1129,26 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 3px;
   transition: all 0.3s ease;
-  text-shadow: 1px 1px 2px greenyellow;
+  text-shadow: none;
   cursor: pointer;
   background: transparent;     /* NEW: No individual bg—uses row's */
+}
+
+.portfolio-swiper-vertical .abstract-link {
+  color: white;
+  text-shadow: none;
 }
 
 .portfolio-swiper-vertical .pub-link:hover,
 .portfolio-swiper-vertical .abstract-link:hover {
   background: rgba(255, 255, 255, 0.2);
-  color: greenyellow;
-  box-shadow: 0 1px 3px rgba(173, 255, 47, 0.3);
+  color: white;
+  box-shadow: none;
+}
+
+.portfolio-swiper-vertical .abstract-link:hover {
+  color: white;
+  box-shadow: none;
 }
 /* NEW: Top Right Github Link */
 .portfolio-swiper-vertical .github-link {
@@ -1118,12 +1166,12 @@ section {
   gap: 5px;
   z-index: 5;
   transition: background 0.3s ease;
-  text-shadow: 1px 1px 2px greenyellow;
+  text-shadow: none;
 }
 
 .portfolio-swiper-vertical .github-link:hover {
   background: rgba(0, 0, 0, 0.7);
-  color: greenyellow;
+  color: white;
 }
 
 .portfolio-swiper-vertical .slide-row {
@@ -1185,6 +1233,58 @@ section {
   padding-bottom: 50px;        /* NEW: Extra space at bottom for row overlay */
 }
 
+/* ASME publication card layout tweaks */
+.portfolio-swiper-vertical .asme-feature-slide .publisher-logo-wrap {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.portfolio-swiper-vertical .asme-feature-slide .publisher-logo {
+  width: 50%;
+  max-width: 160px;
+  height: auto;
+  display: block;
+}
+
+.portfolio-swiper-vertical .asme-feature-slide .publisher-logo-text {
+  width: 50%;
+  max-width: 160px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.portfolio-swiper-vertical .robotica-paper-slide .image-left img {
+  background: #ffffff;
+  padding: 6px;
+  object-fit: contain;
+}
+
+.portfolio-swiper-vertical .indian-patent-slide .image-left img {
+  background: #ffffff;
+  padding: 6px;
+  object-fit: contain;
+}
+
+.portfolio-swiper-vertical .asme-feature-slide .asme-bottom-actions {
+  position: static;
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 0;
+  justify-content: center;
+  background: rgba(79, 78, 81, 0.8);
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.portfolio-swiper-vertical .asme-feature-slide .slide-content p {
+  display: none;
+}
+
 .portfolio-swiper-vertical .icon-box {
   position: relative;
   cursor: pointer;
@@ -1244,13 +1344,15 @@ section {
 
 #modal-title {
   margin-top: 0;
-  text-shadow: 1px 1px 2px greenyellow;
+  color: white;
+  text-shadow: none;
 }
 
 #modal-abstract {
   line-height: 1.5;
   font-size: 14px;
-  text-shadow: 1px 1px 2px greenyellow;
+  color: white;
+  text-shadow: none;
 }
 
 @keyframes fadeIn {
@@ -1320,6 +1422,24 @@ section {
 
   .portfolio-swiper-vertical .slide-content p {
     padding-bottom: 10px;        /* Less padding needed on mobile */
+  }
+
+  .portfolio-swiper-vertical .asme-feature-slide .publisher-logo-wrap {
+    width: 100%;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  .portfolio-swiper-vertical .asme-feature-slide .publisher-logo {
+    width: 50%;
+    max-width: 140px;
+  }
+
+  .portfolio-swiper-vertical .asme-feature-slide .asme-bottom-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .modal-content {
